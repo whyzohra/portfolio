@@ -31,7 +31,7 @@ export default function ContactPage() {
     <div className="page contact contact--engineer">
       <header className="contact__header"><div><p className="eyebrow">CONTACT / CORRESPONDENCE</p><h1>Let’s talk.</h1></div><p>Engineering and research enquiries are welcome. Share the context, scope and what you would like to build or explore.</p></header>
       <div className="contact__desk">
-        <aside className="contact__direct"><p className="eyebrow">DIRECT DETAILS</p><a className="break-all" href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a><p>{SITE_CONFIG.location}</p><a className="text-link" href={SITE_CONFIG.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="text-link" href={SITE_CONFIG.github} target="_blank" rel="noreferrer">GitHub ↗</a></aside>
+        <aside className="contact__direct"><p className="eyebrow">DIRECT DETAILS</p><a className="break-all" href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a><p>{SITE_CONFIG.location}</p><a className="text-link" href={SITE_CONFIG.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a className="text-link" href={SITE_CONFIG.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a></aside>
         <form name="contact" onSubmit={submit} className="contact__form" noValidate>
           <Field label="Name" name="name" type="text" autoComplete="name" />
           <Field label="Email" name="email" type="email" autoComplete="email" />

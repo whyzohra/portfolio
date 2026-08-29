@@ -111,7 +111,7 @@ export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }
               <footer>
                 <Link href={`/archive/${projectSlug(active.title)}`}>OPEN PROJECT DEEP DIVE ↗</Link>
                 {active.github && (
-                  <a href={active.github} target="_blank" rel="noreferrer">
+                  <a href={active.github} target="_blank" rel="noopener noreferrer">
                     SOURCE CODE ↗
                   </a>
                 )}

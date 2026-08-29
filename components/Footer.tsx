@@ -17,7 +17,7 @@ export function Footer() {
           <div className="flex flex-wrap gap-7 font-mono text-xs md:justify-end">
             {links.map((link) =>
               link.external ? (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
                   {link.label}
                 </a>
               ) : (

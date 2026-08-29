@@ -92,7 +92,7 @@ export function ProjectTerminalDive({
 
         <footer className="project-terminal__footer">
           <div>
-            {links.map(link => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}
+            {links.map(link => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}
           </div>
           <Link href={backHref}>← RETURN TO PROJECT ARCHIVE</Link>
         </footer>

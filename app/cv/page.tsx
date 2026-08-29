@@ -25,7 +25,7 @@ export default function CVPage() {
         <p className="mt-2 font-mono text-xs">{PERSONAL_INFO.location}</p>
         {hasPdf && (
           <div className="mt-8 flex flex-wrap gap-6">
-            <a href={pdfUrl} target="_blank" rel="noreferrer" className="text-link">
+            <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="text-link">
               Open current CV ↗
             </a>
             <a href={pdfUrl} download="Zohra_Ahmad_CV.pdf" className="text-link">

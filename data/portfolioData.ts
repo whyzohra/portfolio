@@ -153,6 +153,7 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
       'AWS Lambda and DynamoDB for stateful service logic.',
       'EventBridge integration for distributed event routing.',
       'CloudWatch monitoring and operational visibility.',
+      'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related event-driven architecture patterns is available publicly.',
     ],
     methods: ['Event-driven architecture', 'Serverless backend'],
     models: [],
@@ -160,6 +161,7 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
     technologies: ['Java', 'Python', 'AWS Lambda', 'DynamoDB', 'EventBridge', 'CloudWatch'],
     architecture: projectArchitecture,
     featured: true,
+    reports: [{ label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/eventbridge-automation-pipeline' }],
   },
   {
     id: 'container-state-resolution',
@@ -180,6 +182,7 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
       'Deviation processing pipelines.',
       'AWS Lambda, DynamoDB, EventBridge and AWS Glue integration.',
       'Testing and monitoring infrastructure.',
+      'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related distributed and asynchronous processing patterns is available publicly.',
     ],
     methods: ['Distributed state management', 'Event-driven processing'],
     models: [],
@@ -187,6 +190,7 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
     technologies: ['Java', 'Python', 'AWS Lambda', 'DynamoDB', 'EventBridge', 'AWS Glue', 'CloudWatch'],
     architecture: projectArchitecture,
     featured: true,
+    reports: [{ label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/distributed-task-orchestrator' }],
   },
   {
     id: 'columnar-storage',
@@ -278,6 +282,7 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
     ],
     architecture: projectArchitecture,
     featured: true,
+    github: 'https://github.com/whyzohra/meetmind-ai',
   },
   {
     id: 'atlas-traffic',
@@ -308,6 +313,56 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
     metrics: [{ label: 'F1 score', value: '0.697' }],
     featured: true,
   },
+  {
+    id: 'smart-expense-tracker-api',
+    number: '08',
+    title: 'SMART EXPENSE TRACKER API',
+    slug: 'smart-expense-tracker-api',
+    year: '2026',
+    category: 'Backend Systems',
+    purpose: 'REST API for personal expense management.',
+    overview:
+      'Spring Boot 3 REST API for personal expense management built with Java 21.',
+    problem: 'Personal expense tracking needs a simple and reliable API for everyday financial management.',
+    approach:
+      'Built a Java 21 Spring Boot 3 backend focused on REST-based personal expense management.',
+    implementation: ['REST API for personal expense management.', 'Spring Boot 3 and Java 21 backend.'],
+    methods: ['REST API design', 'Backend engineering'],
+    models: [],
+    datasets: [],
+    technologies: ['Spring Boot 3', 'Java 21', 'REST API'],
+    architecture: projectArchitecture,
+    featured: true,
+    github: 'https://github.com/whyzohra/smart-expense-tracker-api',
+  },
+  {
+    id: 'ml-observability-dashboard',
+    number: '09',
+    title: 'ML OBSERVABILITY DASHBOARD',
+    slug: 'ml-observability-dashboard',
+    year: '2025',
+    category: 'Machine Learning Project',
+    purpose: 'Monitoring ML infrastructure workflows and service health.',
+    overview:
+      'Cloud-native ML observability and monitoring dashboard built using Python, Kubernetes, and distributed infrastructure concepts.',
+    problem:
+      'ML infrastructure needs operational visibility across distributed services and monitoring workflows.',
+    approach:
+      'Built a Python/FastAPI service with Kubernetes deployment support to improve monitoring and observability.',
+    implementation: [
+      'ML service monitoring.',
+      'Infrastructure observability.',
+      'Metrics and logging workflows.',
+      'Kubernetes deployment support.',
+    ],
+    methods: ['Monitoring workflows', 'Infrastructure observability'],
+    models: [],
+    datasets: [],
+    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana', 'Linux'],
+    architecture: projectArchitecture,
+    featured: true,
+    github: 'https://github.com/whyzohra/ml-observability-dashboard',
+  },
 ];
 
 export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
@@ -318,8 +373,10 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     implementation: [
       'Event-driven backend processing for freshness timer workflows.',
       'AWS Lambda, DynamoDB, EventBridge and CloudWatch integration.',
+      'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related event-driven architecture patterns is available publicly.',
     ],
     technologies: ['Java', 'Python', 'AWS Lambda', 'DynamoDB', 'EventBridge', 'CloudWatch'],
+    report: { label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/eventbridge-automation-pipeline' },
   },
   {
     title: 'Container State Resolution and Deviation Processing Engine',
@@ -328,8 +385,10 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     implementation: [
       'Container state resolution and deviation processing pipelines.',
       'AWS Lambda, DynamoDB, EventBridge, AWS Glue and CloudWatch.',
+      'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related distributed and asynchronous processing patterns is available publicly.',
     ],
     technologies: ['Java', 'Python', 'AWS Lambda', 'DynamoDB', 'EventBridge', 'AWS Glue'],
+    report: { label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/distributed-task-orchestrator' },
   },
   {
     title: 'In-Memory Columnar Storage Engine Prototype',
@@ -364,6 +423,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
       'Improved Q&A relevance by 25% through prompt engineering.',
     ],
     technologies: ['FastAPI', 'React', 'Next.js', 'TypeScript', 'OpenAI API'],
+    github: 'https://github.com/whyzohra/meetmind-ai',
   },
   {
     title: 'Atlas – Traffic Intelligence Platform',
@@ -376,16 +436,34 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     ],
     technologies: ['Python', 'PyTorch', 'GraphQL', 'PostgreSQL', 'React', 'Next.js'],
   },
+  {
+    title: 'Smart Expense Tracker API',
+    domain: 'Backend / REST API',
+    summary: 'Spring Boot 3 REST API for personal expense management with Java 21.',
+    implementation: ['REST API for personal expense management.', 'Java 21 and Spring Boot 3 backend.'],
+    technologies: ['Spring Boot 3', 'Java 21', 'REST API'],
+    github: 'https://github.com/whyzohra/smart-expense-tracker-api',
+  },
+  {
+    title: 'ML Observability Dashboard',
+    domain: 'Data / ML monitoring',
+    summary: 'Cloud-native observability dashboard for monitoring ML infrastructure and service health.',
+    implementation: ['ML service monitoring.', 'Infrastructure observability.', 'Kubernetes deployment support.'],
+    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana'],
+    github: 'https://github.com/whyzohra/ml-observability-dashboard',
+  },
 ];
 
 export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
   'Cold-Chain Dynamic Freshness Timer Engine': [
     'Event-driven backend for dynamic freshness timing in cold-chain logistics.',
     'Built on AWS Lambda, DynamoDB, EventBridge and CloudWatch.',
+    'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related event-driven architecture patterns is available publicly at https://github.com/whyzohra/eventbridge-automation-pipeline.',
   ],
   'Container State Resolution and Deviation Processing Engine': [
     'Backend engine for container state resolution and deviation processing.',
     'AWS serverless stack with Glue, monitoring and testing infrastructure.',
+    'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related distributed and asynchronous processing patterns is available publicly at https://github.com/whyzohra/distributed-task-orchestrator.',
   ],
   'In-Memory Columnar Storage Engine Prototype': [
     'Prototype exploring columnar, in-memory storage organisation.',
@@ -405,6 +483,12 @@ export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
     'Designed a REST/GraphQL API using PostgreSQL with React/Next.js dashboards across 100+ routes.',
     'Integrated an open-source traffic-prediction model as the backend data layer.',
     'Achieved an F1 score of 0.697 and reduced dashboard load time by 45%.',
+  ],
+  'Smart Expense Tracker API': [
+    'Spring Boot 3 REST API for personal expense management built with Java 21.',
+  ],
+  'ML Observability Dashboard': [
+    'Cloud-native ML observability dashboard for monitoring service health and distributed workflows.',
   ],
 };
 
