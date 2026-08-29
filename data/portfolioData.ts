@@ -26,6 +26,7 @@ export const SITE_CONFIG = {
   title: 'Zohra Ahmad | Software Engineer',
   description:
     'Zohra Ahmad is a Software Engineer focused on backend engineering, distributed systems, cloud infrastructure, AI and cybersecurity.',
+  icons:{ icon: '/images/za-logo.png', },
   location: 'Jeddah, Saudi Arabia',
   timezone: 'Asia/Riyadh',
   email: 'whyzohra@gmail.com',
