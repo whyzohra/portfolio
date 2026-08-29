@@ -1,8 +1,23 @@
+'use client';
+
 import { ProjectArchive } from '@/components/ProjectArchive';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ArchivePage() {
-  return <main className="page archive-page">
-    <header className="section !pt-0"><p className="eyebrow">ENGINEERING / PROJECTS</p><h1 className="display mt-10">Built,<br/>tested, documented.</h1><p className="lede mt-8">Backend systems, cloud infrastructure, distributed workflows and engineering projects across software development practice.</p></header>
-    <ProjectArchive label="COMPLETE PROJECT INDEX" />
-  </main>;
+  const { ui } = useLanguage();
+
+  return (
+    <main className="page archive-page">
+      <header className="section !pt-0">
+        <p className="eyebrow">{ui.archive.eyebrow}</p>
+        <h1 className="display mt-10">
+          {ui.archive.titleLine1}
+          <br />
+          {ui.archive.titleLine2}
+        </h1>
+        <p className="lede mt-8">{ui.archive.lede}</p>
+      </header>
+      <ProjectArchive label={ui.archive.label} />
+    </main>
+  );
 }

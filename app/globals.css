@@ -1136,3 +1136,81 @@ h1,h2,h3 { font-family: var(--heading-font); }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ============================================================
+   LANGUAGE SWITCHER
+   ============================================================ */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font: 600 .62rem var(--font-mono);
+  letter-spacing: .08em;
+}
+.lang-switcher button {
+  min-height: auto;
+  padding: .15rem .2rem;
+  color: var(--text-muted);
+  transition: color .2s;
+}
+.lang-switcher button.is-active {
+  color: var(--text-main);
+}
+.lang-switcher span {
+  color: var(--border-strong);
+  user-select: none;
+}
+
+/* ============================================================
+   RTL SUPPORT
+   ============================================================ */
+[dir="rtl"] .ltr-content {
+  direction: ltr;
+  unicode-bidi: embed;
+  text-align: left;
+}
+[dir="rtl"] .command-center__rail {
+  border-right: 0;
+  border-left: 1px solid var(--border-strong);
+}
+[dir="rtl"] .contact__direct {
+  border-right: 0;
+  border-left: 1px solid var(--border-subtle);
+}
+[dir="rtl"] .discipline-tabs button {
+  border-right: 1px solid var(--border-subtle);
+  border-left: 0;
+}
+[dir="rtl"] .discipline-tabs button:last-child {
+  border-left: 1px solid var(--border-subtle);
+  border-right: 0;
+}
+[dir="rtl"] .discipline-tabs button span,
+[dir="rtl"] .discipline-tabs button i,
+[dir="rtl"] .interaction-hint span,
+[dir="rtl"] .profile-signal p b,
+[dir="rtl"] .command-center__footer i {
+  margin-right: 0;
+  margin-left: .5rem;
+}
+[dir="rtl"] .discipline-tabs button i {
+  margin-left: 0;
+  margin-right: .7rem;
+}
+[dir="rtl"] .skip-link {
+  left: auto;
+  right: 1rem;
+}
+[dir="rtl"] .page-navigator {
+  right: auto;
+  left: 1rem;
+}
+[dir="rtl"] .project-console__list button b,
+[dir="rtl"] .route-panel a b,
+[dir="rtl"] .project-switcher__copy a b {
+  display: inline-block;
+}
+[dir="rtl"] .education-table-wrap th,
+[dir="rtl"] .education-table-wrap td {
+  text-align: start;
+}

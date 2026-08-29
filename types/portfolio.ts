@@ -56,6 +56,7 @@ export interface ProjectLink {
 }
 
 export interface ArchiveProject {
+  slug: string;
   title: string;
   domain: string;
   technologies: string[];

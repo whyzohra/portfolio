@@ -1,63 +1,28 @@
 'use client';
 
 import Image from '@/components/BasePathImage';
-import { SITE_CONFIG } from '@/data/portfolioData';
+import { useLanguage } from '@/context/LanguageContext';
 import { useEffect, useState } from 'react';
 
-const profiles = [
-  {
-    key: 'backend',
-    label: 'Backend',
-    command: 'inspect --discipline backend',
-    code: 'BE-01',
-    title: 'Backend engineering.',
-    description:
-      'Java, Python, Spring Boot, REST APIs, backend services and production software.',
-  },
-  {
-    key: 'distributed',
-    label: 'Distributed Systems',
-    command: 'inspect --discipline distributed-systems',
-    code: 'DS-02',
-    title: 'Distributed systems.',
-    description:
-      'Event-driven systems, asynchronous workflows, scalable services, reliability and system design.',
-  },
-  {
-    key: 'cloud',
-    label: 'Cloud & AWS',
-    command: 'inspect --discipline cloud-aws',
-    code: 'CL-03',
-    title: 'Cloud & AWS.',
-    description: 'AWS Lambda, EventBridge, S3, Glue, CloudWatch and DynamoDB.',
-  },
-  {
-    key: 'cybersecurity',
-    label: 'Cybersecurity',
-    command: 'inspect --discipline cybersecurity',
-    code: 'SEC-04',
-    title: 'Cybersecurity.',
-    description:
-      'Cybersecurity fundamentals, secure systems, networking, privacy and cybersecurity training.',
-  },
-] as const;
-
-function resolveTimeZone(): string {
+function resolveTimeZone(timezone: string): string {
   try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone || SITE_CONFIG.timezone;
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || timezone;
   } catch {
-    return SITE_CONFIG.timezone;
+    return timezone;
   }
 }
 
 export function EngineerCommandCenter() {
+  const { ui, portfolio } = useLanguage();
+  const { SITE_CONFIG } = portfolio;
+  const profiles = ui.commandCenter.profiles;
   const [active, setActive] = useState(0);
   const [time, setTime] = useState('');
   const [clockLabel, setClockLabel] = useState('LOCAL');
   const profile = profiles[active];
 
   useEffect(() => {
-    const timeZone = resolveTimeZone();
+    const timeZone = resolveTimeZone(SITE_CONFIG.timezone);
     const update = () => {
       const formatter = new Intl.DateTimeFormat('en-GB', {
         timeZone,
@@ -78,7 +43,7 @@ export function EngineerCommandCenter() {
     update();
     const timer = window.setInterval(update, 1000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [SITE_CONFIG.timezone]);
 
   return (
     <div className="command-center">
@@ -88,8 +53,8 @@ export function EngineerCommandCenter() {
           <i />
           <i />
         </span>
-        <span>ZA_OS / PROFESSIONAL PROFILE</span>
-        <span className="command-center__clock">
+        <span>{ui.commandCenter.topbar}</span>
+        <span className="command-center__clock ltr-content">
           {clockLabel} {time || '--:--:--'}
         </span>
       </div>
@@ -98,56 +63,54 @@ export function EngineerCommandCenter() {
           <div className="profile-scan">
             <Image
               src={SITE_CONFIG.portrait!}
-              alt="Zohra Ahmad"
+              alt={ui.commandCenter.portraitAlt}
               fill
               priority
               sizes="(max-width: 760px) 100vw, 320px"
             />
             <div className="profile-scan__line" aria-hidden="true" />
-            <span>IDENTITY VERIFIED</span>
+            <span>{ui.commandCenter.identityVerified}</span>
           </div>
           <div className="profile-id">
-            <p>ZOHRA AHMAD</p>
-            <span>B.Tech Computer Science &amp; Engineering</span>
-            <span>Indian Institute of Information Technology, Sonepat</span>
-            <span>CGPA: 7.9 / 10</span>
-            <span>Graduated: 2026</span>
-            <span>Jeddah, Saudi Arabia</span>
+            <p>{portfolio.PERSONAL_INFO.name}</p>
+            <span>{ui.commandCenter.degree}</span>
+            <span className="ltr-content">{ui.commandCenter.institution}</span>
+            <span className="ltr-content">{ui.commandCenter.cgpa}</span>
+            <span className="ltr-content">{ui.commandCenter.graduated}</span>
+            <span>{SITE_CONFIG.location}</span>
           </div>
           <div className="profile-signal">
-            <span>STATUS</span>
+            <span>{ui.commandCenter.status}</span>
             <p>
-              <b>.</b> ONLINE/OPEN TO WORK
+              <b>.</b> {ui.commandCenter.statusValue}
             </p>
           </div>
         </aside>
         <div className="command-center__main">
-          <div className="terminal-kicker">
-            <span>zohra@portfolio:~$</span> ./introduce --professional
+          <div className="terminal-kicker ltr-content">
+            <span>zohra@portfolio:~$</span> {ui.commandCenter.terminalPrompt}
           </div>
           <h1>
-            SOFTWARE
+            {ui.commandCenter.headlineLine1}
             <br />
-            ENGINEER<span className="accent-dot">.</span>
+            {ui.commandCenter.headlineLine2}
+            <span className="accent-dot">.</span>
           </h1>
-          <p className="command-center__position">
-            Backend engineering, distributed systems, cloud infrastructure, AI and cybersecurity.
-          </p>
+          <p className="command-center__position">{ui.commandCenter.positioning}</p>
           <p className="interaction-hint">
-            <span>INTERACTIVE</span> Select a discipline to inspect the profile
+            <span>{ui.commandCenter.interactive}</span> {ui.commandCenter.interactiveHint}
           </p>
-          <div className="discipline-tabs" role="tablist" aria-label="Engineering disciplines">
+          <div className="discipline-tabs" role="tablist" aria-label={ui.commandCenter.disciplinesAria}>
             {profiles.map((item, index) => (
               <button
-                key={item.key}
+                key={item.command}
                 type="button"
                 role="tab"
                 aria-selected={active === index}
                 onClick={() => setActive(index)}
                 onKeyDown={(event) => {
                   if (event.key === 'ArrowRight') setActive((active + 1) % profiles.length);
-                  if (event.key === 'ArrowLeft')
-                    setActive((active + profiles.length - 1) % profiles.length);
+                  if (event.key === 'ArrowLeft') setActive((active + profiles.length - 1) % profiles.length);
                 }}
               >
                 <span>0{index + 1}</span>
@@ -156,8 +119,8 @@ export function EngineerCommandCenter() {
               </button>
             ))}
           </div>
-          <section className="discipline-panel" role="tabpanel" key={profile.key}>
-            <div className="discipline-panel__head">
+          <section className="discipline-panel" role="tabpanel" key={profile.command}>
+            <div className="discipline-panel__head ltr-content">
               <span>{profile.code}</span>
               <span>{profile.command}</span>
             </div>
@@ -167,10 +130,10 @@ export function EngineerCommandCenter() {
         </div>
       </div>
       <div className="command-center__footer">
-        <span>SOFTWARE / DISTRIBUTED SYSTEMS / CLOUD</span>
-        <span>BACKEND / CYBERSECURITY</span>
+        <span>{ui.commandCenter.footerLine1}</span>
+        <span>{ui.commandCenter.footerLine2}</span>
         <span>
-          <i /> SECURE CONNECTION
+          <i /> {ui.commandCenter.secureConnection}
         </span>
       </div>
     </div>

@@ -15,10 +15,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="engineer">
+    <html lang="en" data-theme="engineer" suppressHydrationWarning>
       <head />
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
         <AppShell>{children}</AppShell>
         <Analytics />
       </body>

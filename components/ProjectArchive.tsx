@@ -3,60 +3,66 @@
 import Image from '@/components/BasePathImage';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { SECONDARY_PROJECT_ARCHIVE, withBasePath } from '@/data/portfolioData';
-import { projectSlug } from '@/lib/projectSlug';
+import { useLanguage } from '@/context/LanguageContext';
 import { projectImage } from '@/lib/projectImages';
 
-const groups = ['All', 'Full-Stack', 'Data / ML', 'Backend'] as const;
-
-const belongsTo = (title: string, domain: string, group: (typeof groups)[number]) => {
-  if (group === 'All') return true;
-  const value = `${title} ${domain}`.toLowerCase();
-  if (group === 'Full-Stack') return /full-stack|meeting|ai application/.test(value);
-  if (group === 'Data / ML') return /data|ml|traffic|prediction/.test(value);
-  if (group === 'Backend') return /backend|api|rest/.test(value);
-  return true;
+const filterMatchers: Record<string, RegExp> = {
+  'Full-Stack': /full-stack|meeting|ai application/i,
+  'Data / ML': /data|ml|traffic|prediction/i,
+  Backend: /backend|api|rest/i,
 };
 
-export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }) {
-  const [group, setGroup] = useState<(typeof groups)[number]>('All');
+const belongsTo = (title: string, domain: string, group: string, allLabel: string) => {
+  if (group === allLabel) return true;
+  const value = `${title} ${domain}`.toLowerCase();
+  const matcher = filterMatchers[group];
+  return matcher ? matcher.test(value) : true;
+};
+
+export function ProjectArchive({ label }: { label?: string }) {
+  const { ui, portfolio } = useLanguage();
+  const { SECONDARY_PROJECT_ARCHIVE, withBasePath } = portfolio;
+  const groups = ui.projectArchive.filters;
+  const [group, setGroup] = useState<(typeof groups)[number]>(groups[0]);
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(0);
+
   const projects = useMemo(
     () =>
       SECONDARY_PROJECT_ARCHIVE.filter(
         (project) =>
-          belongsTo(project.title, project.domain, group) &&
+          belongsTo(project.title, project.domain, group, groups[0]) &&
           `${project.title} ${project.domain} ${project.technologies.join(' ')}`
             .toLowerCase()
             .includes(query.toLowerCase()),
       ),
-    [group, query],
+    [SECONDARY_PROJECT_ARCHIVE, group, groups, query],
   );
   const active = projects[Math.min(selected, Math.max(0, projects.length - 1))];
+  const archiveLabel = label ?? ui.projectArchive.defaultLabel;
 
   return (
     <section className="project-console section rule">
       <div className="project-console__heading">
         <div>
           <p className="eyebrow">
-            {label} / {SECONDARY_PROJECT_ARCHIVE.length} VERIFIED BUILDS
+            {archiveLabel} / {SECONDARY_PROJECT_ARCHIVE.length} {ui.projectArchive.verifiedBuilds}
           </p>
-          <h2 className="section-title mt-4">Project archive.</h2>
+          <h2 className="section-title mt-4">{ui.projectArchive.title}</h2>
         </div>
         <label>
-          <span className="sr-only">Search projects</span>
+          <span className="sr-only">{ui.projectArchive.searchAria}</span>
           <input
             value={query}
             onChange={(event) => {
               setQuery(event.target.value);
               setSelected(0);
             }}
-            placeholder="search projects or tools…"
+            placeholder={ui.projectArchive.searchPlaceholder}
           />
         </label>
       </div>
-      <div className="project-console__filters" role="group" aria-label="Project domain">
+      <div className="project-console__filters" role="group" aria-label={ui.projectArchive.filtersAria}>
         {groups.map((item) => (
           <button
             key={item}
@@ -73,13 +79,13 @@ export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }
       </div>
       {active ? (
         <div className="project-console__body">
-          <div className="project-console__list" role="listbox" aria-label="Projects">
+          <div className="project-console__list" role="listbox" aria-label={ui.projectArchive.listAria}>
             {projects.map((project, index) => (
               <button
-                key={project.title}
+                key={project.slug}
                 type="button"
                 role="option"
-                aria-selected={active.title === project.title}
+                aria-selected={active.slug === project.slug}
                 onClick={() => setSelected(index)}
               >
                 <span>{String(index + 1).padStart(2, '0')}</span>
@@ -92,32 +98,36 @@ export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }
           <article className="project-console__preview">
             <div className="project-console__image">
               <Image
-                key={active.title}
-                src={projectImage(active.title)}
-                alt={`Project visual for ${active.title}`}
+                key={active.slug}
+                src={projectImage(active.slug)}
+                alt={`${ui.projectArchive.projectVisual} ${active.title}`}
                 fill
                 sizes="(max-width: 760px) 100vw, 50vw"
               />
             </div>
             <div className="project-console__meta">
-              <p className="eyebrow">SELECTED OUTPUT / {active.domain}</p>
+              <p className="eyebrow">
+                {ui.projectArchive.selectedOutput} / {active.domain}
+              </p>
               <h3>{active.title}</h3>
               <div>
                 {active.technologies.map((technology) => (
-                  <span key={technology}>{technology}</span>
+                  <span key={technology} className="ltr-content">
+                    {technology}
+                  </span>
                 ))}
               </div>
               <p>{active.summary}</p>
               <footer>
-                <Link href={`/archive/${projectSlug(active.title)}`}>OPEN PROJECT DEEP DIVE ↗</Link>
+                <Link href={`/archive/${active.slug}`}>{ui.projectArchive.openDeepDive}</Link>
                 {active.github && (
-                  <a href={active.github} target="_blank" rel="noopener noreferrer">
-                    SOURCE CODE ↗
+                  <a href={active.github} target="_blank" rel="noopener noreferrer" className="ltr-content">
+                    {ui.projectArchive.sourceCode}
                   </a>
                 )}
                 {active.report && (
-                  <a href={withBasePath(active.report.url)}>
-                    READ {active.report.label.toUpperCase()} ↗
+                  <a href={withBasePath(active.report.url)} className="ltr-content">
+                    {ui.projectArchive.readReport} {active.report.label.toUpperCase()} ↗
                   </a>
                 )}
               </footer>
@@ -125,7 +135,7 @@ export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }
           </article>
         </div>
       ) : (
-        <p className="project-console__empty">No projects match this command.</p>
+        <p className="project-console__empty">{ui.projectArchive.empty}</p>
       )}
     </section>
   );

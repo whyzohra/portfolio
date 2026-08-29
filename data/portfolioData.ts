@@ -367,6 +367,7 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
 
 export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
   {
+    slug: 'cold-chain-dynamic-freshness-timer-engine',
     title: 'Cold-Chain Dynamic Freshness Timer Engine',
     domain: 'Backend / AWS',
     summary: 'Event-driven freshness tracking for cold-chain logistics on AWS.',
@@ -379,6 +380,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     report: { label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/eventbridge-automation-pipeline' },
   },
   {
+    slug: 'container-state-resolution-and-deviation-processing-engine',
     title: 'Container State Resolution and Deviation Processing Engine',
     domain: 'Backend / distributed systems',
     summary: 'Container state resolution and deviation processing for operational workflows.',
@@ -391,6 +393,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     report: { label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/distributed-task-orchestrator' },
   },
   {
+    slug: 'in-memory-columnar-storage-engine-prototype',
     title: 'In-Memory Columnar Storage Engine Prototype',
     domain: 'Systems engineering',
     summary:
@@ -399,6 +402,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     technologies: ['C++'],
   },
   {
+    slug: 'drone-based-intelligent-system-for-apple-orchard-management',
     title: 'Drone-Based Intelligent System for Apple Orchard Management',
     domain: 'Intelligent systems / vision',
     summary:
@@ -407,6 +411,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     technologies: ['Python', 'C++'],
   },
   {
+    slug: 'autonomous-vehicle-object-detection',
     title: 'Autonomous Vehicle / Object Detection',
     domain: 'Computer vision / robotics',
     summary: 'Object detection and perception work related to autonomous vehicle systems.',
@@ -414,6 +419,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     technologies: ['Python', 'C++'],
   },
   {
+    slug: 'meetmind-ai',
     title: 'MeetMind AI',
     domain: 'Full-stack / AI application',
     summary:
@@ -426,6 +432,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     github: 'https://github.com/whyzohra/meetmind-ai',
   },
   {
+    slug: 'atlas-traffic-intelligence-platform',
     title: 'Atlas – Traffic Intelligence Platform',
     domain: 'Data / ML platform',
     summary:
@@ -437,6 +444,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     technologies: ['Python', 'PyTorch', 'GraphQL', 'PostgreSQL', 'React', 'Next.js'],
   },
   {
+    slug: 'smart-expense-tracker-api',
     title: 'Smart Expense Tracker API',
     domain: 'Backend / REST API',
     summary: 'Spring Boot 3 REST API for personal expense management with Java 21.',
@@ -445,6 +453,7 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     github: 'https://github.com/whyzohra/smart-expense-tracker-api',
   },
   {
+    slug: 'ml-observability-dashboard',
     title: 'ML Observability Dashboard',
     domain: 'Data / ML monitoring',
     summary: 'Cloud-native observability dashboard for monitoring ML infrastructure and service health.',
@@ -491,6 +500,13 @@ export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
     'Cloud-native ML observability dashboard for monitoring service health and distributed workflows.',
   ],
 };
+
+export const ARCHIVE_PROJECT_DETAILS_BY_SLUG: Record<string, string[]> = Object.fromEntries(
+  SECONDARY_PROJECT_ARCHIVE.map((project) => [
+    project.slug,
+    ARCHIVE_PROJECT_DETAILS[project.title] ?? project.implementation,
+  ]),
+);
 
 export const ABOUT_CHRONOLOGY_ORDER = ['90ways', 'amazon', 'ihfc'] as const;
 
