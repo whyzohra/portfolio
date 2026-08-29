@@ -48,9 +48,15 @@ export function Navigation() {
   return (
     <header className="site-nav site-nav--engineer sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[color:var(--bg-primary)]/95">
       <div className="mx-auto flex h-[74px] w-[min(100%-2rem,1180px)] items-center justify-between gap-6">
-        <Link href="/" className="font-mono text-xs tracking-[.14em]" aria-label={ui.nav.homeAria}>
-          ZA / E
-        </Link>
+      <div className="lang-switcher" role="group" aria-label="Language">
+        <button type="button" className={language === 'en' ? 'is-active' : ''} aria-pressed={language === 'en'} onClick={() => setLanguage('en')}>
+          EN
+        </button>
+        <span aria-hidden="true">/</span>
+        <button type="button" className={language === 'ar' ? 'is-active' : ''} aria-pressed={language === 'ar'} onClick={() => setLanguage('ar')}>
+          ع
+        </button>
+      </div>
         <nav className="hidden items-center gap-6 lg:flex" aria-label={ui.nav.primary}>
           {links.map(([label, href]) => (
             <Link
@@ -69,25 +75,6 @@ export function Navigation() {
           >
             {ui.nav.contactArrow}
           </Link>
-          <div className="lang-switcher" role="group" aria-label="Language">
-            <button
-              type="button"
-              className={language === 'ar' ? 'is-active' : ''}
-              aria-pressed={language === 'ar'}
-              onClick={() => setLanguage('ar')}
-            >
-              ع
-            </button>
-            <span aria-hidden="true">/</span>
-            <button
-              type="button"
-              className={language === 'en' ? 'is-active' : ''}
-              aria-pressed={language === 'en'}
-              onClick={() => setLanguage('en')}
-            >
-              EN
-            </button>
-          </div>
         </nav>
         <div className="flex items-center gap-4 lg:hidden">
           <div className="lang-switcher" role="group" aria-label="Language">
