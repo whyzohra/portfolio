@@ -77,25 +77,6 @@ export function Navigation() {
           </Link>
         </nav>
         <div className="flex items-center gap-4 lg:hidden">
-          <div className="lang-switcher" role="group" aria-label="Language">
-            <button
-              type="button"
-              className={language === 'ar' ? 'is-active' : ''}
-              aria-pressed={language === 'ar'}
-              onClick={() => setLanguage('ar')}
-            >
-              ع
-            </button>
-            <span aria-hidden="true">/</span>
-            <button
-              type="button"
-              className={language === 'en' ? 'is-active' : ''}
-              aria-pressed={language === 'en'}
-              onClick={() => setLanguage('en')}
-            >
-              EN
-            </button>
-          </div>
           <button
             ref={triggerRef}
             type="button"
