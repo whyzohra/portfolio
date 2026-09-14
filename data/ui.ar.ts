@@ -43,10 +43,6 @@ export const uiAr: UITranslations = {
     topbar: 'ZA_OS / الملف المهني',
     identityVerified: 'تم التحقق من الهوية',
     portraitAlt: 'زهرة أحمد',
-    degree: 'بكالوريوس التكنولوجيا في علوم الحاسوب والهندسة',
-    institution: 'Indian Institute of Information Technology, Sonepat',
-    cgpa: 'المعدل التراكمي: 7.9 / 10',
-    graduated: 'التخرج: 2026',
     status: 'الحالة',
     statusValue: 'متاحة/متاحة للعمل',
     terminalPrompt: './introduce --professional',
@@ -60,6 +56,19 @@ export const uiAr: UITranslations = {
     footerLine1: 'البرمجيات / الأنظمة الموزعة / السحابة',
     footerLine2: 'الخلفية / الأمن السيبراني',
     secureConnection: 'اتصال آمن',
+    education: [
+      {
+        degree: 'EXECUTIVE MASTER IN CYBERSECURITY',
+        institution: 'King Abdulaziz University',
+        period: '2026–الحاضر',
+      },
+      {
+        degree: 'بكالوريوس التكنولوجيا في علوم الحاسوب والهندسة',
+        institution: 'IIIT Sonepat',
+        grade: 'المعدل التراكمي: 7.9/10',
+        period: 'تخرجت يوليو 2026',
+      },
+    ],
     profiles: [
       {
         label: 'الخلفية',

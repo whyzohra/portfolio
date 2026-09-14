@@ -41,10 +41,6 @@ export const uiEn = {
     topbar: 'ZA_OS / PROFESSIONAL PROFILE',
     identityVerified: 'IDENTITY VERIFIED',
     portraitAlt: 'Zohra Ahmad',
-    degree: 'B.Tech Computer Science & Engineering',
-    institution: 'Indian Institute of Information Technology, Sonepat',
-    cgpa: 'CGPA: 7.9 / 10',
-    graduated: 'Graduated: 2026',
     status: 'STATUS',
     statusValue: 'ONLINE/OPEN TO WORK',
     terminalPrompt: './introduce --professional',
@@ -58,6 +54,19 @@ export const uiEn = {
     footerLine1: 'SOFTWARE / DISTRIBUTED SYSTEMS / CLOUD',
     footerLine2: 'BACKEND / CYBERSECURITY',
     secureConnection: 'SECURE CONNECTION',
+    education: [
+      {
+        degree: 'EXECUTIVE MASTER IN CYBERSECURITY',
+        institution: 'King Abdulaziz University',
+        period: '2026–Present',
+      },
+      {
+        degree: 'B.Tech Computer Science & Engineering',
+        institution: 'IIIT Sonepat',
+        grade: 'CGPA: 7.9/10',
+        period: 'Graduated July 2026',
+      },
+    ],
     profiles: [
       {
         label: 'Backend',

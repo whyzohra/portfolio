@@ -2,7 +2,7 @@
 
 import Image from '@/components/BasePathImage';
 import { useLanguage } from '@/context/LanguageContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Fragment } from 'react';
 
 function resolveTimeZone(timezone: string): string {
   try {
@@ -16,6 +16,7 @@ export function EngineerCommandCenter() {
   const { ui, portfolio } = useLanguage();
   const { SITE_CONFIG } = portfolio;
   const profiles = ui.commandCenter.profiles;
+  const educationEntries = ui.commandCenter.education ?? [];
   const [active, setActive] = useState(0);
   const [time, setTime] = useState('');
   const [clockLabel, setClockLabel] = useState('LOCAL');
@@ -73,10 +74,14 @@ export function EngineerCommandCenter() {
           </div>
           <div className="profile-id">
             <p>{portfolio.PERSONAL_INFO.name}</p>
-            <span>{ui.commandCenter.degree}</span>
-            <span className="ltr-content">{ui.commandCenter.institution}</span>
-            <span className="ltr-content">{ui.commandCenter.cgpa}</span>
-            <span className="ltr-content">{ui.commandCenter.graduated}</span>
+            {educationEntries.map((item, index) => (
+              <Fragment key={`${item.degree}-${index}`}>
+                <span>{item.degree}</span>
+                <span className="ltr-content">{item.institution}</span>
+                {('grade' in item && item.grade) && <span className="ltr-content">{item.grade}</span>}
+                {item.period && <span className="ltr-content">{item.period}</span>}
+              </Fragment>
+            ))}
             <span>{SITE_CONFIG.location}</span>
           </div>
           <div className="profile-signal">
