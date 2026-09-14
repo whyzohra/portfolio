@@ -41,10 +41,18 @@ export const PERSONAL_INFO = {
 
 export const EDUCATION: Education[] = [
   {
-    degree: 'بكالوريوس التكنولوجيا في علوم الحاسوب والهندسة',
-    institution: 'Indian Institute of Information Technology, Sonepat (IIIT Sonepat)',
+    degree: 'EXECUTIVE MASTER IN CYBERSECURITY',
+    institution: 'King Abdulaziz University',
+    period: '2026–الحاضر',
+    grade: 'قيد التقدم',
+    details:
+      'الأمن السيبراني، ومخاطر الرقمنة، والأنظمة الآمنة، والحوكمة، وممارسات الأمان التطبيقية.',
+  },
+  {
+    degree: 'Bachelor of Technology in Computer Science and Engineering',
+    institution: 'Indian Institute of Information Technology, Sonepat',
     period: 'تخرجت يوليو 2026',
-    grade: 'المعدل التراكمي: 7.9 / 10',
+    grade: 'المعدل التراكمي: 7.9/10',
     details:
       'مقررات ذات صلة: البرمجة كائنية التوجه، هياكل البيانات والخوارزميات، أنظمة إدارة قواعد البيانات، شبكات الحاسوب، هندسة البرمجيات',
   },

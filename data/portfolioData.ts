@@ -51,10 +51,18 @@ export const PERSONAL_INFO = {
 
 export const EDUCATION: Education[] = [
   {
+    degree: 'EXECUTIVE MASTER IN CYBERSECURITY',
+    institution: 'King Abdulaziz University',
+    period: '2026–Present',
+    grade: 'In progress',
+    details:
+      'Cybersecurity, digital risk, secure systems, governance, and applied security practices.',
+  },
+  {
     degree: 'Bachelor of Technology in Computer Science and Engineering',
-    institution: 'Indian Institute of Information Technology, Sonepat (IIIT Sonepat)',
+    institution: 'Indian Institute of Information Technology, Sonepat',
     period: 'Graduated July 2026',
-    grade: 'CGPA: 7.9 / 10',
+    grade: 'CGPA: 7.9/10',
     details:
       'Relevant coursework: Object-Oriented Programming, Data Structures & Algorithms, Database Management Systems, Computer Networks, Software Engineering',
   },
