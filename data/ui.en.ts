@@ -47,7 +47,7 @@ export const uiEn = {
     headlineLine1: 'SOFTWARE',
     headlineLine2: 'ENGINEER',
     positioning:
-      'Backend engineering, distributed systems, cloud infrastructure, AI and cybersecurity.',
+      'Building reliable systems. Exploring cybersecurity. Engineering with security in mind.',
     interactiveHint: 'Select a discipline to inspect the profile',
     interactive: 'INTERACTIVE',
     disciplinesAria: 'Engineering disciplines',
@@ -133,7 +133,7 @@ export const uiEn = {
       ],
     },
     cta: {
-      text: 'Interested in backend engineering, distributed systems, cloud infrastructure, AI or reliable production software?',
+      text: 'Interested in backend engineering, cloud infrastructure, AI or cybersecurity?',
       button: 'START A CONVERSATION ↗',
     },
     capabilities: [
@@ -168,8 +168,11 @@ export const uiEn = {
     eyebrow: 'ENGINEERING / EXPERIENCE',
     titleLine1: 'Backend.',
     titleLine2: 'Cloud.',
-    titleLine3: 'Systems.',
-    lede: 'Experience across backend engineering, distributed systems, cloud infrastructure and production-oriented software development.',
+    titleLine3: 'Security.',
+    lede: 'Experience across backend engineering, distributed systems, cloud infrastructure and production-oriented software development, with a growing focus on cybersecurity and secure systems.',
+    supportingStatement: 'Built, tested, documented.',
+    supportingDescription:
+      'Backend systems, cloud infrastructure, distributed workflows and engineering projects across software development practice, alongside hands-on cybersecurity learning.',
     rolesAria: 'Professional roles',
     current: '● CURRENT',
     currentPosition: '● CURRENT POSITION',
@@ -197,7 +200,7 @@ export const uiEn = {
     eyebrow: 'ENGINEERING / PROJECTS',
     titleLine1: 'Built,',
     titleLine2: 'tested, documented.',
-    lede: 'Backend systems, cloud infrastructure, distributed workflows and engineering projects across software development practice.',
+    lede: 'Backend systems, cloud infrastructure, distributed workflows and engineering projects across software development practice, alongside hands-on cybersecurity learning.',
     label: 'COMPLETE PROJECT INDEX',
     backLink: '← Technical archive',
   },
@@ -393,5 +396,6 @@ export const uiEn = {
     backendCloud: 'Backend & Cloud',
     frontendTools: 'Frontend & Tools',
     ai: 'AI',
+    cybersecurity: 'Cybersecurity',
   },
 } as const;

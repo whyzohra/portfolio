@@ -8,6 +8,8 @@ export const PROJECT_IMAGE_BY_SLUG: Record<string, string> = {
   'atlas-traffic-intelligence-platform': 'inflation_project.jpg',
   'smart-expense-tracker-api': 'mlloopoptselector.jpg',
   'ml-observability-dashboard': 'mlloopoptselector.jpg',
+  'sentinel-iot': 'greenmycloud_project.jpg',
+  'booking-api': 'mlloopoptselector.jpg',
 };
 
 export const PROJECT_IMAGE_BY_TITLE: Record<string, string> = {
@@ -18,6 +20,10 @@ export const PROJECT_IMAGE_BY_TITLE: Record<string, string> = {
   'Autonomous Vehicle / Object Detection': 'multimodal_project.jpg',
   'MeetMind AI': 'llm_research_project.jpg',
   'Atlas – Traffic Intelligence Platform': 'inflation_project.jpg',
+  'SENTINELIOT': 'greenmycloud_project.jpg',
+  'SentinelIoT': 'greenmycloud_project.jpg',
+  'BOOKINGAPI': 'mlloopoptselector.jpg',
+  'BookingAPI': 'mlloopoptselector.jpg',
 };
 
 export const projectImage = (titleOrSlug: string) =>

@@ -107,6 +107,11 @@ export function EngineerIndex() {
               <Link href={`/work/${project.slug}`}>
                 {ui.engineerIndex.projects.openCaseStudy} <b>↗</b>
               </Link>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="ltr-content">
+                  {ui.projectTerminal.linkLabels.github} <b>↗</b>
+                </a>
+              )}
             </div>
           </article>
         </div>

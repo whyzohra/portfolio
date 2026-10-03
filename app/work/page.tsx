@@ -23,6 +23,16 @@ export default function WorkPage() {
           {ui.work.titleLine3}
         </h1>
         <p className="lede mt-8">{ui.work.lede}</p>
+        {ui.work.supportingStatement && (
+          <div className="mt-8 border-t border-[var(--border-subtle)] pt-6">
+            <h2 className="font-mono text-sm tracking-wider uppercase text-[var(--accent-color)]">
+              {ui.work.supportingStatement}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]">
+              {ui.work.supportingDescription}
+            </p>
+          </div>
+        )}
       </header>
       <section className="experience-console">
         <nav aria-label={ui.work.rolesAria}>
