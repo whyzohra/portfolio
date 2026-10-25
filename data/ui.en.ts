@@ -124,7 +124,7 @@ export const uiEn = {
     navigate: {
       eyebrow: '04 / NAVIGATE',
       routes: [
-        { label: 'Experience', command: 'cat ./experience', note: 'Amazon · 90ways · IHFC' },
+        { label: 'Experience', command: 'cat ./experience', note: 'UNIKIT · 90ways · Amazon · IHFC' },
         { label: 'Projects', command: 'ls ./projects', note: 'MeetMind · Atlas' },
         { label: 'Skills', command: 'cat ./skills', note: 'Technical index' },
         { label: 'About', command: 'cat ./about', note: 'Profile + education' },
@@ -172,7 +172,7 @@ export const uiEn = {
     lede: 'Experience across backend engineering, distributed systems, cloud infrastructure and production-oriented software development, with a growing focus on cybersecurity and secure systems.',
     supportingStatement: 'Built, tested, documented.',
     supportingDescription:
-      'Backend systems, cloud infrastructure, distributed workflows and engineering projects across software development practice, alongside hands-on cybersecurity learning.',
+      'Backend systems, cloud infrastructure, distributed workflows and engineering projects, alongside ongoing cybersecurity studies.',
     rolesAria: 'Professional roles',
     current: '● CURRENT',
     currentPosition: '● CURRENT POSITION',
@@ -227,6 +227,9 @@ export const uiEn = {
     eyebrow: 'ENGINEERING / CAPABILITY INDEX',
     title: 'Technical skills.',
     verified: 'verified tools, methods and engineering capabilities',
+    cybersecurityLabel: 'ACADEMIC FOCUS / KING ABDULAZIZ UNIVERSITY',
+    cybersecurityNote:
+      'Cybersecurity is a developing academic specialization pursued through the Executive Master in Cybersecurity at King Abdulaziz University.',
     searchLabel: 'SEARCH CAPABILITIES',
     searchPlaceholder: 'Type a skill or tool...',
     all: 'ALL',

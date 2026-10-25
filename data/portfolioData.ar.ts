@@ -81,13 +81,21 @@ export const EXPERIENCE: Experience[] = [
     id: '90ways',
     role: 'مهندسة تطوير برمجيات',
     organization: '90ways',
-    period: 'فبراير 2026 – يوليو 2026',
+    period: 'فبراير – يوليو 2026',
+    dates: 'فبراير – يوليو 2026',
     location: 'المملكة العربية السعودية',
-    primary: true,
+    primary: false,
     summary:
-      'تطوير REST APIs للخلفية لنظام CRM، مع تحسين SQL وسير عمل هندسي بمساعدة الذكاء الاصطناعي.',
+      'تطوير REST APIs للخلفية لنظام CRM لخدمة العميل شركة الخزف الفرسان (Al Forsan Ceramics) عبر 90ways، مع تحسين SQL وسير عمل هندسي بمساعدة الذكاء الاصطناعي.',
+    description:
+      'تطوير REST APIs للخلفية لنظام CRM لخدمة العميل شركة الخزف الفرسان (Al Forsan Ceramics) عبر 90ways، مع تحسين SQL وسير عمل هندسي بمساعدة الذكاء الاصطناعي.',
+    responsibilities: [
+      'طورت أكثر من 10 REST APIs للخلفية بـ Java و Python و Spring Boot لنظام CRM يخدم عميل الشركة (شركة الخزف الفرسان - Al Forsan Ceramics) عبر 90ways ويعالج أكثر من 1,000 طلب.',
+      'حسّنت استعلامات SQL على MySQL/PostgreSQL، مما خفّض زمن الاستجابة بنسبة 30% عبر الفهرسة وضبط الاستعلامات.',
+      'استخدمت أدوات برمجة بالذكاء الاصطناعي بما فيها Claude و Codex و Gemini عبر التطوير والاختبار، مما قلّص وقت التطوير بنسبة 25%.',
+    ],
     focus: [
-      'طورت أكثر من 10 REST APIs للخلفية بـ Java و Python و Spring Boot لنظام CRM يخدم أكثر من 1,000 طلب.',
+      'طورت أكثر من 10 REST APIs للخلفية بـ Java و Python و Spring Boot لنظام CRM يخدم عميل الشركة (شركة الخزف الفرسان - Al Forsan Ceramics) عبر 90ways ويعالج أكثر من 1,000 طلب.',
       'حسّنت استعلامات SQL على MySQL/PostgreSQL، مما خفّض زمن الاستجابة بنسبة 30% عبر الفهرسة وضبط الاستعلامات.',
       'استخدمت أدوات برمجة بالذكاء الاصطناعي بما فيها Claude و Codex و Gemini عبر التطوير والاختبار، مما قلّص وقت التطوير بنسبة 25%.',
     ],
@@ -206,22 +214,34 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
     reports: [{ label: 'تنفيذ النمط العام', url: 'https://github.com/whyzohra/distributed-task-orchestrator' }],
   },
   {
-    id: 'columnar-storage',
+    id: 'sentinel-iot',
     number: '03',
-    title: 'نموذج أولي لمحرك تخزين عمودي في الذاكرة',
-    slug: 'in-memory-columnar-storage-engine',
+    title: 'SENTINELIOT',
+    slug: 'sentinel-iot',
+    year: '2026',
     category: 'Systems Engineering',
-    purpose: 'استكشاف تصميم محرك تخزين عمودي في الذاكرة.',
-    overview: 'نموذج أولي لمحرك تخزين يستكشف تنظيم بيانات عمودي في الذاكرة لأحمال تحليلية.',
-    problem: 'تخطيطات التخزين العمودي يمكن أن تحسّن أداء القراءة التحليلية عند تصميمها للتنفيذ في الذاكرة.',
-    approach: 'تنفيذ نموذج أولي يركز على أساسيات محرك التخزين والتصميم على مستوى النظام.',
-    implementation: ['نموذج أولي لتخزين عمودي في الذاكرة.'],
-    methods: ['نمذجة أنظمة'],
-    models: [],
-    datasets: [],
-    technologies: ['C++'],
+    purpose: 'مختبر عمليات أمنية محلي وخط أنابيب لمراقبة القياس عن بعد لبيئات OT/ICS المحاكاة.',
+    overview:
+      'مختبر معياري لعمليات أمن بيئات OT/ICS يحاكي القياس الصناعي عن بعد وفق نموذج بيردو (Purdue)، ويقيّم قواعد كشف التهديدات الحتمية، ويربط التنبيهات بـ MITRE ATT&CK، ويحسب مخاطر قابلة للتفسير مع لوحة تحكم SOC.',
+    problem:
+      'تجمع أنظمة التحكم الصناعية بين وحدات التحكم القديمة والشبكات التشغيلية حيث يعد اختبار المراقبة الأمنية والاستجابة للحوادث على المعدات الحية أمراً غير آمن وغير عملي.',
+    approach:
+      'بناء خط أنابيب محاكاة محلي مع مخططات موحدة، وكشف التسلل القائم على القواعد، وتطبيع سجلات FortiGate، وتخطيط MITRE ATT&CK، وتسجيل المخاطر، ولوحة SOC تفاعلية بـ React.',
+    implementation: [
+      'توليد قياس صناعي حتمي تركيبي لأصول PLC و HMI و SCADA عبر طبقات شبكة نموذج بيردو.',
+      'هندسة قواعد كشف حتمية (DET-001–007) للاستطلاع، والقوة الغاشمة، والوصول غير المصرح، ودفقات المرور.',
+      'ربط التنبيهات الأمنية بتكتيكات وتقنيات MITRE ATT&CK مع إسناد شفاف للأدلة.',
+      'تنفيذ تسجيل مخاطر قابل للتفسير متعدد العوامل يقيّم الشدة وأهمية الأصول وثقة الكشف.',
+      'إنشاء إدارة حوادث بـ SQLite لتتبع الجداول الزمنية وملاحظات المحلل ومسارات التدقيق وسيناريوهات الاستجابة.',
+      'بناء لوحة تحكم SOC تفاعلية بـ React/TypeScript وواجهة برمجة تطبيقات للفحص وفرز التنبيهات.',
+    ],
+    methods: ['مراقبة أمان OT', 'كشف التسلل', 'تخطيط MITRE ATT&CK', 'نمذجة المخاطر', 'الاستجابة للحوادث'],
+    models: ['Isolation Forest (كشف الشذوذ الاختياري)'],
+    datasets: ['قياسات OT صناعية تركيبية', 'سجلات FortiGate'],
+    technologies: ['Python', 'SQLite', 'React', 'TypeScript', 'FastAPI', 'MITRE ATT&CK', 'AWS CDK', 'Scikit-learn'],
     architecture: projectArchitecture,
     featured: true,
+    github: 'https://github.com/whyzohra/SentineIoT',
   },
   {
     id: 'drone-orchard',
@@ -333,29 +353,33 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
     github: 'https://github.com/whyzohra/smart-expense-tracker-api',
   },
   {
-    id: 'ml-observability-dashboard',
+    id: 'booking-api',
     number: '09',
-    title: 'لوحة ملاحظة ML',
-    slug: 'ml-observability-dashboard',
-    year: '2025',
-    category: 'Machine Learning Project',
-    purpose: 'مراقبة سير عمل بنية ML التحتية وصحة الخدمة.',
-    overview: 'لوحة ملاحظة ومراقبة ML سحابية أصلية مبنية بـ Python و Kubernetes ومفاهيم بنية موزعة.',
-    problem: 'بنية ML التحتية تحتاج رؤية تشغيلية عبر خدمات موزعة وسير عمل مراقبة.',
-    approach: 'بنيت خدمة Python/FastAPI مع دعم نشر Kubernetes لتحسين المراقبة والملاحظة.',
+    title: 'BOOKINGAPI',
+    slug: 'booking-api',
+    year: '2026',
+    category: 'Backend Systems',
+    purpose: 'واجهة برمجة تطبيقات REST إنتاجية لحجز المواعيد مع التحكم في التزامن وتحديثات فورية.',
+    overview:
+      'واجهة برمجة تطبيقات REST لحجز المواعيد قوية ومبنية بـ TypeScript و NestJS، وتتميز بالتحكم في تزامن PostgreSQL لمنع الحجز المزدوج، ومعاملات ذرية عبر Prisma ORM، وبث أحداث Socket.IO في الوقت الفعلي.',
+    problem:
+      'يمكن أن تؤدي طلبات الحجز المتزامنة لنفس الفترات إلى حجز مزدوج وتضارب في البيانات دون تحكم صارم على مستوى قاعدة البيانات.',
+    approach:
+      'تصميم مسار حجز ذري باستخدام معاملات Prisma التفاعلية وفهرس فريد جزئي في PostgreSQL، مع Socket.IO لمزامنة حالة العميل فورياً.',
     implementation: [
-      'مراقبة خدمة ML.',
-      'ملاحظة البنية التحتية.',
-      'سير عمل المقاييس والتسجيل.',
-      'دعم نشر Kubernetes.',
+      'هندسة مسارات الحجز الذرية مع التحكم في التزامن باستخدام فهارس PostgreSQL الجزئية الفريدة.',
+      'تكامل Prisma ORM مع معاملات تفاعلية لضمان الاتساق عبر حجز الفترات وإلغائها.',
+      'بناء طبقة إشعارات في الوقت الفعلي تبث أحداث booking.created و booking.cancelled عبر Socket.IO.',
+      'تنفيذ تحقق صارم من الحمولات باستخدام DTOs و class-validator وتوثيق تفاعلي بـ Swagger/OpenAPI.',
+      'إنشاء مجموعات اختبارات آلية شاملة واختبارات وحدة باستخدام Jest و Supertest.',
     ],
-    methods: ['سير عمل المراقبة', 'ملاحظة البنية التحتية'],
+    methods: ['التحكم في التزامن', 'المعاملات الذرية', 'تصميم REST API', 'WebSockets في الوقت الفعلي'],
     models: [],
     datasets: [],
-    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana', 'Linux'],
+    technologies: ['TypeScript', 'NestJS', 'PostgreSQL', 'Prisma ORM', 'Socket.IO', 'Swagger/OpenAPI', 'Jest'],
     architecture: projectArchitecture,
     featured: true,
-    github: 'https://github.com/whyzohra/ml-observability-dashboard',
+    github: 'https://github.com/whyzohra/BookingAPI',
   },
 ];
 
@@ -387,12 +411,17 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     report: { label: 'تنفيذ النمط العام', url: 'https://github.com/whyzohra/distributed-task-orchestrator' },
   },
   {
-    slug: 'in-memory-columnar-storage-engine-prototype',
-    title: 'نموذج أولي لمحرك تخزين عمودي في الذاكرة',
-    domain: 'Systems engineering',
-    summary: 'نموذج أولي لمحرك تخزين يستكشف تنظيم بيانات عمودي في الذاكرة لأحمال تحليلية.',
-    implementation: ['نموذج أولي لتخزين عمودي في الذاكرة.'],
-    technologies: ['C++'],
+    slug: 'sentinel-iot',
+    title: 'SentinelIoT',
+    domain: 'Security operations / OT simulation',
+    summary: 'مختبر عمليات أمنية محلي وخط أنابيب للقياس عن بعد لبيئات OT/ICS المحاكاة.',
+    implementation: [
+      'توليد قياس صناعي حتمي تركيبي لأصول PLC و HMI و SCADA.',
+      'قواعد كشف التسلل مع تخطيط MITRE ATT&CK وتسجيل مخاطر قابل للتفسير.',
+      'إدارة حوادث بـ SQLite مع لوحة SOC تفاعلية بـ React/TypeScript وواجهة loopback API.',
+    ],
+    technologies: ['Python', 'SQLite', 'React', 'TypeScript', 'FastAPI', 'MITRE ATT&CK', 'AWS CDK'],
+    github: 'https://github.com/whyzohra/SentineIoT',
   },
   {
     slug: 'drone-based-intelligent-system-for-apple-orchard-management',
@@ -440,13 +469,17 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     github: 'https://github.com/whyzohra/smart-expense-tracker-api',
   },
   {
-    slug: 'ml-observability-dashboard',
-    title: 'لوحة ملاحظة ML',
-    domain: 'Data / ML monitoring',
-    summary: 'لوحة ملاحظة سحابية أصلية لمراقبة بنية ML التحتية وصحة الخدمة.',
-    implementation: ['مراقبة خدمة ML.', 'ملاحظة البنية التحتية.', 'دعم نشر Kubernetes.'],
-    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana'],
-    github: 'https://github.com/whyzohra/ml-observability-dashboard',
+    slug: 'booking-api',
+    title: 'BookingAPI',
+    domain: 'Backend / distributed systems',
+    summary: 'واجهة برمجة تطبيقات REST إنتاجية لحجز المواعيد مع تحكم تزامن PostgreSQL وتحديثات فورية بـ Socket.IO.',
+    implementation: [
+      'مسارات حجز ذرية تمنع الحجز المزدوج باستخدام فهارس PostgreSQL الجزئية الفريدة.',
+      'معاملات تفاعلية عبر Prisma ORM وتحقق صارم باستخدام class-validator.',
+      'بث أحداث في الوقت الفعلي باستخدام Socket.IO وتوثيق تفاعلي بـ Swagger/OpenAPI.',
+    ],
+    technologies: ['TypeScript', 'NestJS', 'PostgreSQL', 'Prisma ORM', 'Socket.IO', 'Swagger/OpenAPI', 'Jest'],
+    github: 'https://github.com/whyzohra/BookingAPI',
   },
 ];
 
@@ -461,7 +494,11 @@ export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
     'مكدس AWS بدون خادم مع Glue ومراقبة وبنية تحتية للاختبار.',
     'تنفيذ نمط عام: طُوّر هذا المشروع ضمن عمل هندسي خاص. يتوفر تنفيذ شخصي منفصل يعرض أنماط المعالجة الموزعة وغير المتزامنة ذات صلة علناً على https://github.com/whyzohra/distributed-task-orchestrator.',
   ],
-  'نموذج أولي لمحرك تخزين عمودي في الذاكرة': ['نموذج أولي يستكشف تنظيم تخزين عمودي في الذاكرة.'],
+  'SentinelIoT': [
+    'مختبر عمليات أمنية محلي لبيئات OT/ICS المحاكاة.',
+    'كشف قواعد حتمي، وتخصيب MITRE ATT&CK، وتسجيل مخاطر قابل للتفسير.',
+    'إدارة حوادث بـ SQLite ولوحة SOC تفاعلية بـ React/TypeScript.',
+  ],
   'نظام ذكي بالطائرات بدون طيار لإدارة بساتين التفاح': ['نظام ذكي بالطائرات بدون طيار لإدارة بساتين التفاح.'],
   'كشف المركبات المستقلة / الأجسام': ['عمل كشف أجسام في سياق مركبة مستقلة.'],
   'MeetMind AI': [
@@ -475,7 +512,11 @@ export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
     'حققت درجة F1 بقيمة 0.697 وخفّضت وقت تحميل اللوحة بنسبة 45%.',
   ],
   'Smart Expense Tracker API': ['Spring Boot 3 REST API لإدارة النفقات الشخصية مبني بـ Java 21.'],
-  'لوحة ملاحظة ML': ['لوحة ملاحظة ML سحابية أصلية لمراقبة صحة الخدمة وسير العمل الموزع.'],
+  'BookingAPI': [
+    'واجهة برمجة تطبيقات REST لحجز المواعيد مبنية بـ NestJS و TypeScript و PostgreSQL.',
+    'تحكم في التزامن لمنع الحجز المزدوج باستخدام فهارس فريدة جزئية ومعاملات ذرية بـ Prisma.',
+    'بث أحداث في الوقت الفعلي عبر Socket.IO وتوثيق بـ Swagger/OpenAPI.',
+  ],
 };
 
 export const ARCHIVE_PROJECT_DETAILS_BY_SLUG: Record<string, string[]> = Object.fromEntries(
@@ -516,6 +557,15 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'الذكاء الاصطناعي',
     items: ['OpenAI API', 'PyTorch', 'AI-assisted development', 'Claude', 'Codex', 'Gemini'],
+  },
+  {
+    category: 'الأمن السيبراني (تركيز أكاديمي — ماجستير تنفيذي، جامعة الملك عبد العزيز)',
+    items: [
+      'الأنظمة الآمنة',
+      'المخاطر الرقمية والحوكمة',
+      'ممارسات الأمان التطبيقية',
+      'أساسيات أمان الشبكات',
+    ],
   },
 ];
 

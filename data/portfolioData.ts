@@ -91,13 +91,21 @@ export const EXPERIENCE: Experience[] = [
     id: '90ways',
     role: 'Software Development Engineer',
     organization: '90ways',
-    period: 'February 2026 – July 2026',
+    period: 'February–July 2026',
+    dates: 'February–July 2026',
     location: 'Saudi Arabia',
-    primary: true,
+    primary: false,
     summary:
-      'Backend REST API development for a CRM system, with SQL optimisation and AI-assisted engineering workflows.',
+      'Backend REST API development for a CRM system serving client Al Forsan Ceramics through 90ways, with SQL optimisation and AI-assisted engineering workflows.',
+    description:
+      'Backend REST API development for a CRM system serving client Al Forsan Ceramics through 90ways, with SQL optimisation and AI-assisted engineering workflows.',
+    responsibilities: [
+      'Developed 10+ backend REST APIs in Java, Python and Spring Boot for a CRM system serving client Al Forsan Ceramics through 90ways, processing 1,000+ requests.',
+      'Optimized SQL queries against MySQL/PostgreSQL, reducing response latency by 30% through indexing and query tuning.',
+      'Used AI coding tools including Claude, Codex and Gemini across development and testing, cutting development time by 25%.',
+    ],
     focus: [
-      'Developed 10+ backend REST APIs in Java, Python and Spring Boot for a CRM system serving 1,000+ requests.',
+      'Developed 10+ backend REST APIs in Java, Python and Spring Boot for a CRM system serving client Al Forsan Ceramics through 90ways, processing 1,000+ requests.',
       'Optimized SQL queries against MySQL/PostgreSQL, reducing response latency by 30% through indexing and query tuning.',
       'Used AI coding tools including Claude, Codex and Gemini across development and testing, cutting development time by 25%.',
     ],
@@ -433,13 +441,18 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     report: { label: 'Public Pattern Implementation', url: 'https://github.com/whyzohra/distributed-task-orchestrator' },
   },
   {
-    slug: 'in-memory-columnar-storage-engine-prototype',
-    title: 'In-Memory Columnar Storage Engine Prototype',
-    domain: 'Systems engineering',
+    slug: 'sentinel-iot',
+    title: 'SentinelIoT',
+    domain: 'Security operations / OT simulation',
     summary:
-      'Prototype storage engine exploring columnar, in-memory data organisation for analytical workloads.',
-    implementation: ['In-memory columnar storage prototype.'],
-    technologies: ['C++'],
+      'Safe, local-first security operations lab and telemetry pipeline for simulated OT/ICS environments.',
+    implementation: [
+      'Deterministic synthetic telemetry generation for PLC, HMI, and SCADA assets.',
+      'Intrusion detection rules with MITRE ATT&CK enrichment and explainable risk scoring.',
+      'SQLite incident management with React/TypeScript SOC dashboard and loopback API.',
+    ],
+    technologies: ['Python', 'SQLite', 'React', 'TypeScript', 'FastAPI', 'MITRE ATT&CK', 'AWS CDK'],
+    github: 'https://github.com/whyzohra/SentineIoT',
   },
   {
     slug: 'drone-based-intelligent-system-for-apple-orchard-management',
@@ -493,13 +506,18 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
     github: 'https://github.com/whyzohra/smart-expense-tracker-api',
   },
   {
-    slug: 'ml-observability-dashboard',
-    title: 'ML Observability Dashboard',
-    domain: 'Data / ML monitoring',
-    summary: 'Cloud-native observability dashboard for monitoring ML infrastructure and service health.',
-    implementation: ['ML service monitoring.', 'Infrastructure observability.', 'Kubernetes deployment support.'],
-    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana'],
-    github: 'https://github.com/whyzohra/ml-observability-dashboard',
+    slug: 'booking-api',
+    title: 'BookingAPI',
+    domain: 'Backend / distributed systems',
+    summary:
+      'Production REST API for appointment booking with PostgreSQL concurrency control and real-time Socket.IO updates.',
+    implementation: [
+      'Atomic booking workflows preventing double-booking using PostgreSQL partial unique indexes.',
+      'Interactive transactions with Prisma ORM and strict validation with class-validator.',
+      'Real-time WebSocket event broadcasting with Socket.IO and interactive OpenAPI documentation.',
+    ],
+    technologies: ['TypeScript', 'NestJS', 'PostgreSQL', 'Prisma ORM', 'Socket.IO', 'Swagger/OpenAPI', 'Jest'],
+    github: 'https://github.com/whyzohra/BookingAPI',
   },
 ];
 
@@ -514,8 +532,10 @@ export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
     'AWS serverless stack with Glue, monitoring and testing infrastructure.',
     'Public Pattern Implementation: This project was developed as part of proprietary engineering work. A separate personal implementation demonstrating related distributed and asynchronous processing patterns is available publicly at https://github.com/whyzohra/distributed-task-orchestrator.',
   ],
-  'In-Memory Columnar Storage Engine Prototype': [
-    'Prototype exploring columnar, in-memory storage organisation.',
+  'SentinelIoT': [
+    'Safe, local-first security operations lab for simulated OT/ICS environments.',
+    'Deterministic rule detection, MITRE ATT&CK enrichment, and explainable risk scoring.',
+    'SQLite incident management and interactive React/TypeScript SOC dashboard.',
   ],
   'Drone-Based Intelligent System for Apple Orchard Management': [
     'Intelligent drone-based system for apple orchard management.',
@@ -536,8 +556,10 @@ export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
   'Smart Expense Tracker API': [
     'Spring Boot 3 REST API for personal expense management built with Java 21.',
   ],
-  'ML Observability Dashboard': [
-    'Cloud-native ML observability dashboard for monitoring service health and distributed workflows.',
+  'BookingAPI': [
+    'Fixed-slot appointment booking REST API built with NestJS, TypeScript, and PostgreSQL.',
+    'Concurrency control preventing double-booking using PostgreSQL partial unique indexes and Prisma atomic transactions.',
+    'Real-time Socket.IO event broadcasting and Swagger/OpenAPI documentation.',
   ],
 };
 
@@ -594,6 +616,15 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'AI',
     items: ['OpenAI API', 'PyTorch', 'AI-assisted development', 'Claude', 'Codex', 'Gemini'],
+  },
+  {
+    category: 'Cybersecurity (Academic Focus — KAU Executive Master)',
+    items: [
+      'Secure Systems',
+      'Digital Risk & Governance',
+      'Applied Security Practices',
+      'Network Security Fundamentals',
+    ],
   },
 ];
 

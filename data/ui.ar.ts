@@ -126,7 +126,7 @@ export const uiAr: UITranslations = {
     navigate: {
       eyebrow: '04 / التنقل',
       routes: [
-        { label: 'الخبرة', command: 'cat ./experience', note: 'Amazon · 90ways · IHFC' },
+        { label: 'الخبرة', command: 'cat ./experience', note: 'UNIKIT · 90ways · Amazon · IHFC' },
         { label: 'المشاريع', command: 'ls ./projects', note: 'MeetMind · Atlas' },
         { label: 'المهارات', command: 'cat ./skills', note: 'الفهرس التقني' },
         { label: 'نبذة', command: 'cat ./about', note: 'الملف والتعليم' },
@@ -174,7 +174,7 @@ export const uiAr: UITranslations = {
     lede: 'خبرة في هندسة الخلفية والأنظمة الموزعة والبنية السحابية وتطوير البرمجيات الموجهة للإنتاج، مع تركيز متزايد على الأمن السيبراني والأنظمة الآمنة.',
     supportingStatement: 'مبنية، مختبرة، موثقة.',
     supportingDescription:
-      'أنظمة خلفية وبنية سحابية وتدفقات عمل موزعة ومشاريع هندسية عبر ممارسة تطوير البرمجيات، إلى جانب تعلّم عملي للأمن السيبراني.',
+      'أنظمة خلفية وبنية سحابية وتدفقات عمل موزعة ومشاريع هندسية، إلى جانب دراسات مستمرة في الأمن السيبراني.',
     rolesAria: 'الأدوار المهنية',
     current: '● الحالية',
     currentPosition: '● المنصب الحالي',
@@ -229,6 +229,9 @@ export const uiAr: UITranslations = {
     eyebrow: 'الهندسة / فهرس القدرات',
     title: 'المهارات التقنية.',
     verified: 'أداة ومنهجية وقدرة هندسية موثقة',
+    cybersecurityLabel: 'التركيز الأكاديمي / جامعة الملك عبد العزيز',
+    cybersecurityNote:
+      'يمثل الأمن السيبراني تخصصاً أكاديمياً قيد التطوير من خلال الماجستير التنفيذي في الأمن السيبراني بجامعة الملك عبد العزيز.',
     searchLabel: 'البحث في القدرات',
     searchPlaceholder: 'اكتب مهارة أو أداة...',
     all: 'الكل',

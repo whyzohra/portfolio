@@ -34,6 +34,16 @@ export default function SkillsPage() {
           <span>{ui.skills.verified}</span>
         </div>
       </header>
+      {ui.skills.cybersecurityNote && (
+        <aside className="mb-8 border border-[var(--border-subtle)] p-4">
+          <p className="font-mono text-xs uppercase tracking-wider text-[var(--accent-color)]">
+            {ui.skills.cybersecurityLabel}
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">
+            {ui.skills.cybersecurityNote}
+          </p>
+        </aside>
+      )}
       <section className="skills-controls">
         <label>
           <span>{ui.skills.searchLabel}</span>

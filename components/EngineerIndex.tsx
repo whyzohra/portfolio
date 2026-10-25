@@ -11,7 +11,7 @@ export function EngineerIndex() {
   const [selected, setSelected] = useState(0);
   const projects = FEATURED_ENGINEERING_PROJECTS;
   const project = projects[selected];
-  const current = EXPERIENCE.slice(0, 3);
+  const current = EXPERIENCE;
   const visual = project.visuals?.[0]?.src ?? '/projects/archive/mlloopoptselector.jpg';
   const routes = ui.engineerIndex.navigate.routes.map((route, index) => ({
     ...route,
