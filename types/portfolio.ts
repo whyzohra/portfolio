@@ -81,13 +81,24 @@ export interface ProjectVisual {
 
 export interface Experience {
   id: string;
-  role: string;
   organization: string;
+  /** Program, role, or position title */
+  role: string;
+  program?: string;
+  title?: string;
+  /** Official affiliation or parent institution */
+  affiliation?: string;
+  /** Active period or dates */
   period: string;
-  location: string;
+  dates?: string;
+  location?: string;
   /** One-line summary used in condensed contexts (homepage, About). Falls back to focus[0]. */
   summary?: string;
-  focus: string[];
+  description?: string;
+  responsibilities?: string[];
+  focus?: string[];
+  projectLinks?: ProjectLink[];
+  links?: ProjectLink[];
   primary?: boolean;
 }
 

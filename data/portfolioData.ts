@@ -70,6 +70,24 @@ export const EDUCATION: Education[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: 'unikit',
+    role: 'UNIKIT Internship Program',
+    program: 'UNIKIT Internship Program',
+    organization: 'UNIKIT',
+    affiliation:
+      'UNIKIT was launched by Wadi Jeddah, the investment arm of King Abdulaziz University.',
+    period: 'Present',
+    dates: 'Present',
+    location: 'Jeddah, Saudi Arabia',
+    primary: true,
+    summary:
+      'UNIKIT was launched by Wadi Jeddah, the investment arm of King Abdulaziz University.',
+    description:
+      'UNIKIT was launched by Wadi Jeddah, the investment arm of King Abdulaziz University.',
+    responsibilities: [],
+    focus: [],
+  },
+  {
     id: '90ways',
     role: 'Software Development Engineer',
     organization: '90ways',

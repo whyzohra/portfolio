@@ -45,10 +45,13 @@ export function CVContent({ hasPdf, pdfUrl }: { hasPdf: boolean; pdfUrl: string 
               </h3>
               <span className="eyebrow ltr-content">{e.period}</span>
             </div>
+            {e.affiliation && <p className="eyebrow mt-1 text-[var(--accent-color)]">{e.affiliation}</p>}
             {e.location && <p className="eyebrow mt-2">{e.location}</p>}
-            {e.summary && <p className="mt-4 text-sm text-[var(--text-muted)]">{e.summary}</p>}
+            {(e.description || e.summary) && (
+              <p className="mt-4 text-sm text-[var(--text-muted)]">{e.description || e.summary}</p>
+            )}
             <ul className="mt-4 space-y-2 text-sm text-[var(--text-muted)]">
-              {e.focus.map((f) => (
+              {(e.responsibilities || e.focus || []).map((f) => (
                 <li key={f}>: {f}</li>
               ))}
             </ul>

@@ -9,7 +9,9 @@ export default function WorkPage() {
   const { ADDITIONAL_EXPERIENCE, EDUCATION, EXPERIENCE } = portfolio;
   const [activeRole, setActiveRole] = useState(0);
   const roles = [...EXPERIENCE, ...ADDITIONAL_EXPERIENCE];
-  const active = roles[activeRole];
+  const active = roles[activeRole] || roles[0];
+  const responsibilities = active ? (active.responsibilities ?? active.focus ?? []) : [];
+  const projectLinks = active ? (active.projectLinks ?? active.links ?? []) : [];
 
   return (
     <div className="page experience-page">
@@ -45,35 +47,85 @@ export default function WorkPage() {
               onClick={() => setActiveRole(index)}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <b>{role.role}</b>
+              <b>{role.role || role.title || role.program}</b>
               <small>{role.organization}</small>
-              <em className="ltr-content">{role.primary ? ui.work.current : role.period}</em>
+              <em className="ltr-content">
+                {role.primary ? ui.work.current : (role.period || role.dates)}
+              </em>
             </button>
           ))}
         </nav>
-        <article key={active.id}>
-          <header>
-            <p className="eyebrow">
-              {ui.work.role} / {String(activeRole + 1).padStart(2, '0')}
-            </p>
-            <div>
-              {active.primary && <b>{ui.work.currentPosition}</b>}
-              <span className="ltr-content">{active.period}</span>
-            </div>
-          </header>
-          <h2>{active.role}</h2>
-          <h3>{active.organization}</h3>
-          <p>{active.location}</p>
-          {active.summary && <p className="experience-role-summary">{active.summary}</p>}
-          <div>
-            {active.focus.map((item, index) => (
-              <section key={item}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <p>{item}</p>
-              </section>
-            ))}
-          </div>
-        </article>
+        {active && (
+          <article key={active.id}>
+            <header>
+              <p className="eyebrow">
+                {ui.work.role} / {String(activeRole + 1).padStart(2, '0')}
+              </p>
+              <div>
+                {active.primary && <b>{ui.work.currentPosition}</b>}
+                <span className="ltr-content">{active.period || active.dates}</span>
+              </div>
+            </header>
+            <h2>{active.role || active.title || active.program}</h2>
+            <h3>{active.organization}</h3>
+            {active.affiliation && (
+              <p className="experience-affiliation font-mono text-xs text-[var(--accent-color)] mt-2">
+                <span className="text-[var(--text-muted)]">{ui.work.affiliation}: </span>
+                {active.affiliation}
+              </p>
+            )}
+            {active.location && <p>{active.location}</p>}
+            {(active.description || active.summary) && (
+              <p className="experience-role-summary">{active.description || active.summary}</p>
+            )}
+            {responsibilities.length > 0 && (
+              <div>
+                {responsibilities.map((item, index) => (
+                  <section key={item}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <p>{item}</p>
+                  </section>
+                ))}
+              </div>
+            )}
+            {projectLinks.length > 0 && (
+              <footer className="experience-project-links mt-6">
+                <p className="eyebrow mb-2">{ui.work.projectLinks}</p>
+                <div className="flex flex-col gap-2">
+                  {projectLinks.map((link) => {
+                    const isExternal =
+                      link.url.startsWith('http://') || link.url.startsWith('https://');
+                    return isExternal ? (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="experience-art-link flex items-center justify-between"
+                      >
+                        <span>{link.label}</span>
+                        <span aria-hidden="true" className="ltr-content">
+                          ↗
+                        </span>
+                      </a>
+                    ) : (
+                      <Link
+                        key={link.url}
+                        href={link.url}
+                        className="experience-art-link flex items-center justify-between"
+                      >
+                        <span>{link.label}</span>
+                        <span aria-hidden="true" className="ltr-content">
+                          →
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </footer>
+            )}
+          </article>
+        )}
       </section>
       <section className="experience-summary">
         <div>

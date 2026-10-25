@@ -60,6 +60,24 @@ export const EDUCATION: Education[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: 'unikit',
+    role: 'برنامج تدريب يونيكيت (UNIKIT)',
+    program: 'برنامج تدريب يونيكيت (UNIKIT)',
+    organization: 'UNIKIT',
+    affiliation:
+      'أُطلق برنامج يونيكيت بواسطة وادي جدة، ذراع الاستثمار لجامعة الملك عبد العزيز.',
+    period: 'الحاضر',
+    dates: 'الحاضر',
+    location: 'جدة، المملكة العربية السعودية',
+    primary: true,
+    summary:
+      'أُطلق برنامج يونيكيت بواسطة وادي جدة، ذراع الاستثمار لجامعة الملك عبد العزيز.',
+    description:
+      'أُطلق برنامج يونيكيت بواسطة وادي جدة، ذراع الاستثمار لجامعة الملك عبد العزيز.',
+    responsibilities: [],
+    focus: [],
+  },
+  {
     id: '90ways',
     role: 'مهندسة تطوير برمجيات',
     organization: '90ways',
